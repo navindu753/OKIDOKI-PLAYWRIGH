@@ -15,11 +15,11 @@ test.describe('Oki-Doki Login Functionality', () => {
 //gtt
 
   });
-  
+
 
   test('Verify user can create a job with basic details', async ({ page }) => {
 
-    for (let i = 1; i <= 10; i++) {
+    for (let  = 1; i <= 10; i++) {
 
       console.log(`Creating Job #${i}`);
 
