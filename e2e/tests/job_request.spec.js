@@ -7,7 +7,7 @@ test.describe('Oki-Doki Login Functionality', () => {
     await page.goto('http://okidokidev.overleap.lk');
 
     // Login
-    awai page.fill('input[name="email"]', credentials_okidoki.valid.email);
+    await page.fill('input[name="email"]', credentials_okidoki.valid.email);
     await page.fill('input[name="password"]', credentials_okidoki.valid.password);
     await page.click('button:has-text("Login")');
 
@@ -15,6 +15,7 @@ test.describe('Oki-Doki Login Functionality', () => {
 //gtt
 
   });
+  
 
   test('Verify user can create a job with basic details', async ({ page }) => {
 
