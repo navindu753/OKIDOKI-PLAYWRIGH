@@ -24,3 +24,7 @@ This is a **Playwright E2E test suite** (not an application). There is no local 
 ### No lint/type-check configured
 
 The repo has no ESLint, Prettier, or TypeScript config files. The only runnable check is `npm test`.
+
+### Viewing test reports
+
+After running tests, view the HTML report with `npx playwright show-report`. Do not run `npm test` with all specs — `job_request.spec.js` and `login negative.spec.js` will crash the runner due to pre-existing import errors. Instead, run specific working test files listed above.
