@@ -6,20 +6,20 @@ test.describe('Oki-Doki Login Functionality', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('http://okidokidev.overleap.lk');
 
-    // Login
-    await page.fill('input[name="email"]', credentials_okidoki.valid.email);
-    await page.fill('input[name="password"]', credentials_okidoki.valid.password);
-    await page.click('button:has-text("Login")');
+    // Login (Sign In page: labeled fields + Continue)
+    await page.getByRole('textbox', { name: /email or username/i }).fill(credentials_okidoki.valid.email);
+    await page.getByRole('textbox', { name: /^password$/i }).fill(credentials_okidoki.valid.password);
+    await page.getByRole('button', { name: /^continue$/i }).click();
 
     await page.waitForLoadState('networkidle');
 //gtt
 
   });
-  
+
 
   test('Verify user can create a job with basic details', async ({ page }) => {
 
-    for (let i = 1; i <= 10; i++) {
+    for (let  i= 1; i <= 10; i++) {
 
       console.log(`Creating Job #${i}`);
 
