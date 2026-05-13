@@ -1,14 +1,20 @@
 import { test, expect } from '@playwright/test';
-import { credentials_okidoki } from '../../fixtures/credentials_okidoki';
+
+const OKIDOKI_EMAIL = process.env.OKIDOKI_EMAIL;
+const OKIDOKI_PASSWORD = process.env.OKIDOKI_PASSWORD;
 
 test.describe('Oki-Doki Login Functionality', () => {
+  test.skip(
+    !OKIDOKI_EMAIL || !OKIDOKI_PASSWORD,
+    'Set OKIDOKI_EMAIL and OKIDOKI_PASSWORD to run this test',
+  );
 
   test.beforeEach(async ({ page }) => {
     await page.goto('http://okidokidev.overleap.lk');
 
     // Login (Sign In page: labeled fields + Continue)
-    await page.getByRole('textbox', { name: /email or username/i }).fill(credentials_okidoki.valid.email);
-    await page.getByRole('textbox', { name: /^password$/i }).fill(credentials_okidoki.valid.password);
+    await page.getByRole('textbox', { name: /email or username/i }).fill(OKIDOKI_EMAIL);
+    await page.getByRole('textbox', { name: /^password$/i }).fill(OKIDOKI_PASSWORD);
     await page.getByRole('button', { name: /^continue$/i }).click();
 
     await page.waitForLoadState('networkidle');

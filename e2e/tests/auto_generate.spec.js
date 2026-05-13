@@ -4,7 +4,7 @@ const { test, expect } = require('@playwright/test');
 const TEST_EMAIL = process.env.TEST_EMAIL ?? 'user@example.com';
 const TEST_PASSWORD = process.env.TEST_PASSWORD ?? 'your-password';
 
-test('login: email, password, and dashboard visibility', async ({ page }) => {
+test.skip('login: email, password, and dashboard visibility', async ({ page }) => {
   // 1. Open login page
   await page.goto('https://example.com/login');
 

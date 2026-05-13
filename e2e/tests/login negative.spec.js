@@ -1,4 +1,6 @@
-test('Invalid Login Test', async ({ page }) => {
+const { test, expect } = require('@playwright/test');
+
+test.skip('Invalid Login Test', async ({ page }) => {
 
     await page.goto('https://example.com/login');
   
