@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npx playwright test",
     "report": "npx playwright show-report",
-    "test:bug3": "npx playwright test e2e/bug3.spec.js"
+    "test:invalid-login": "npx playwright test e2e/tests/Bug.login.spec.js"
   },
   "keywords": [],
   "author": "",
