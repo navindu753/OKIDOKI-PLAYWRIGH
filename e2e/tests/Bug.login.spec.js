@@ -20,4 +20,5 @@ test('Bug check: invalid login should show an error and block access', async ({ 
     strictError,
     `BUG: expected exact error message "${expectedErrorText}" after invalid login`,
   ).toBeVisible({ timeout: 30_000 });
+
 });
