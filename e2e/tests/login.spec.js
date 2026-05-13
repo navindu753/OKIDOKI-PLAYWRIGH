@@ -7,7 +7,7 @@ test('OkiDoki sign-in form loads and accepts input', async ({ page }) => {
   await expect(page.getByRole('heading', { name: /^sign in$/i })).toBeVisible();
 
   await page.getByRole('textbox', { name: /email or username/i }).fill('smoke-check@example.com');
-  await page.getByRole('textbox', { name: /^password$/i }).fill('not-a-real-password');
+  await page.getByRole('textbox', { name: /^password$/i }).fill('123456*+Hp');
   await page.getByRole('button', { name: /^continue$/i }).click();
 
   // Invalid login should keep the user on the sign-in experience (heading still present)
